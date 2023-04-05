@@ -12,7 +12,6 @@ var RedisHandler *redis.Client
 
 // InitRedisHandler .
 func InitRedisHandler() {
-	fmt.Println(fmt.Sprintf(`%s:%d`, viper.GetString("redis.host"), viper.GetInt("redis.port")))
 	RedisHandler = redis.NewClient(&redis.Options{
 		Addr: fmt.Sprintf(`%s:%d`, viper.GetString("redis.host"), viper.GetInt("redis.port")),
 	})
